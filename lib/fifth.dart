@@ -10,7 +10,6 @@ class Screen5 extends StatefulWidget {
   @override
   State<Screen5> createState() => _Screen5State();
 }
-//Ajay
 class _Screen5State extends State<Screen5> {
   get verificationCode => null;
 

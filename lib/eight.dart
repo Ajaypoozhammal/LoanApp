@@ -1,3 +1,4 @@
+import 'package:bankloan/pafe9.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -273,8 +274,7 @@ class _Screen8State extends State<Screen8> {
                                         width: 335.w,
                                         height: 100.h,
                                         decoration: ShapeDecoration(
-                                          color: Colors.white
-                                          ,
+                                          color: Colors.white,
                                           shape: RoundedRectangleBorder(
                                             side:
                                                 BorderSide(color: Colors.black),
@@ -299,12 +299,14 @@ class _Screen8State extends State<Screen8> {
                                           child: Column(
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsets.only(left: 1,top: 5),
+                                                padding: const EdgeInsets.only(
+                                                    left: 1, top: 5),
                                                 child: Row(
                                                   children: [
                                                     Text(
                                                       'Monthly \nPayment',
-                                                      style: GoogleFonts.poppins(
+                                                      style:
+                                                          GoogleFonts.poppins(
                                                         textStyle: TextStyle(
                                                           color: Colors.black,
                                                           fontSize: 10.sp,
@@ -318,7 +320,8 @@ class _Screen8State extends State<Screen8> {
                                                     ),
                                                     Text(
                                                       'No of\nPayments',
-                                                      style: GoogleFonts.poppins(
+                                                      style:
+                                                          GoogleFonts.poppins(
                                                         textStyle: TextStyle(
                                                           color: Colors.black,
                                                           fontSize: 10.sp,
@@ -332,7 +335,8 @@ class _Screen8State extends State<Screen8> {
                                                     ),
                                                     Text(
                                                       'Total Payback',
-                                                      style: GoogleFonts.poppins(
+                                                      style:
+                                                          GoogleFonts.poppins(
                                                         textStyle: TextStyle(
                                                           color: Colors.black,
                                                           fontSize: 10.sp,
@@ -351,10 +355,13 @@ class _Screen8State extends State<Screen8> {
                                               Row(
                                                 children: [
                                                   Padding(
-                                                    padding: const EdgeInsets.only(left: 5),
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            left: 5),
                                                     child: Text(
                                                       'NIL',
-                                                      style: GoogleFonts.poppins(
+                                                      style:
+                                                          GoogleFonts.poppins(
                                                         textStyle: TextStyle(
                                                           color:
                                                               Color(0xFFC4C4C4),
@@ -369,10 +376,13 @@ class _Screen8State extends State<Screen8> {
                                                     width: 60.w,
                                                   ),
                                                   Padding(
-                                                    padding: const EdgeInsets.only(left: 10),
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            left: 10),
                                                     child: Text(
                                                       'NIL',
-                                                      style: GoogleFonts.poppins(
+                                                      style:
+                                                          GoogleFonts.poppins(
                                                         textStyle: TextStyle(
                                                           fontSize: 20.sp,
                                                           color:
@@ -387,10 +397,13 @@ class _Screen8State extends State<Screen8> {
                                                     width: 80.h,
                                                   ),
                                                   Padding(
-                                                    padding: const EdgeInsets.only(left: 30),
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            left: 30),
                                                     child: Text(
                                                       'NIL',
-                                                      style: GoogleFonts.poppins(
+                                                      style:
+                                                          GoogleFonts.poppins(
                                                         textStyle: TextStyle(
                                                           fontSize: 20.sp,
                                                           color:
@@ -480,14 +493,420 @@ class _Screen8State extends State<Screen8> {
                                                   BorderRadius.circular(20.r)),
                                         ),
                                         child: Center(
-                                          child: Text(
-                                            'Apply Now',
-                                            style: GoogleFonts.poppins(
-                                              textStyle: TextStyle(
-                                                color: Color(0xFFFFF2F2),
-                                                fontSize: 18.sp,
-                                                fontWeight: FontWeight.w600,
-                                                letterSpacing: 0.06,
+                                          child: TextButton(
+                                            onPressed: () {
+                                              showModalBottomSheet(
+                                                isScrollControlled: true,
+                                                context: context,
+                                                builder:
+                                                    (BuildContext context) {
+                                                  return SizedBox(
+                                                    height: 600.h,
+                                                    width: 600.w,
+                                                    child: Column(
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .only(
+                                                                  top: 45),
+                                                          child: Text(
+                                                            'That was way to easy!',
+                                                            style: GoogleFonts
+                                                                .poppins(
+                                                              textStyle:
+                                                                  TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize: 17.sp,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                letterSpacing:
+                                                                    0.04,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 10.h,
+                                                        ),
+                                                        Text(
+                                                          'Congratulations!',
+                                                          style: GoogleFonts
+                                                              .poppins(
+                                                            textStyle:
+                                                                TextStyle(
+                                                              color: Color(
+                                                                  0xFF1F1F1F),
+                                                              fontSize: 24.sp,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w700,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 15.h,
+                                                        ),
+                                                        CircleAvatar(
+                                                          backgroundColor:
+                                                              Color(0xFFC5C5C5),
+                                                          radius: 40.r,
+                                                          child: Icon(
+                                                            Icons.done,
+                                                            color:
+                                                                CupertinoColors
+                                                                    .activeGreen,
+                                                            size: 80,
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 15.h,
+                                                        ),
+                                                        Text(
+                                                          'Transaction Summary',
+                                                          style: GoogleFonts
+                                                              .poppins(
+                                                            textStyle:
+                                                                TextStyle(
+                                                              color:
+                                                                  Colors.black,
+                                                              fontSize: 17.sp,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                              letterSpacing:
+                                                                  0.04,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 15.h,
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .only(
+                                                                  left: 30),
+                                                          child: Row(
+                                                            children: [
+                                                              Column(
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
+                                                                children: [
+                                                                  Text(
+                                                                    'Next Repayment Date:',
+                                                                    style: GoogleFonts
+                                                                        .poppins(
+                                                                      textStyle:
+                                                                          TextStyle(
+                                                                        color: Color(
+                                                                            0xFF7F8790),
+                                                                        fontSize:
+                                                                            14.sp,
+                                                                        fontWeight:
+                                                                            FontWeight.w300,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  SizedBox(
+                                                                    height: 10.h,
+                                                                  ),
+                                                                  Text(
+                                                                    'Interest Rate:',
+                                                                    style: GoogleFonts
+                                                                        .poppins(
+                                                                      textStyle:
+                                                                          TextStyle(
+                                                                        color: Color(
+                                                                            0xFF7F8790),
+                                                                        fontSize:
+                                                                            14.sp,
+                                                                        fontWeight:
+                                                                            FontWeight.w300,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  SizedBox(
+                                                                    height: 10.h,
+                                                                  ),
+                                                                  Text(
+                                                                    'Monthly Repayment:',
+                                                                    style: GoogleFonts
+                                                                        .poppins(
+                                                                      textStyle:
+                                                                          TextStyle(
+                                                                        color: Color(
+                                                                            0xFF7F8790),
+                                                                        fontSize:
+                                                                            14.sp,
+                                                                        fontWeight:
+                                                                            FontWeight.w300,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  SizedBox(
+                                                                    height: 10.h,
+                                                                  ),
+                                                                  Text(
+                                                                    'No of Payments:',
+                                                                    style: GoogleFonts
+                                                                        .poppins(
+                                                                      textStyle:
+                                                                          TextStyle(
+                                                                        color: Color(
+                                                                            0xFF7F8790),
+                                                                        fontSize:
+                                                                            14.sp,
+                                                                        fontWeight:
+                                                                            FontWeight.w300,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  SizedBox(
+                                                                    height: 10.h,
+                                                                  ),
+                                                                  Text(
+                                                                    'Reason',
+                                                                    style: GoogleFonts
+                                                                        .poppins(
+                                                                      textStyle:
+                                                                          TextStyle(
+                                                                        color: Color(
+                                                                            0xFF7F8790),
+                                                                        fontSize:
+                                                                            14.sp,
+                                                                        fontWeight:
+                                                                            FontWeight.w300,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  SizedBox(
+                                                                    height: 10.h,
+                                                                  ),
+                                                                  Text(
+                                                                    'Total Payback Amount:',
+                                                                    style: GoogleFonts
+                                                                        .poppins(
+                                                                      textStyle:
+                                                                          TextStyle(
+                                                                        color: Color(
+                                                                            0xFF7F8790),
+                                                                        fontSize:
+                                                                            14.sp,
+                                                                        fontWeight:
+                                                                            FontWeight.w300,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  SizedBox(
+                                                                    height: 10.h,
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              SizedBox(
+                                                                width: 50.w,
+                                                              ),
+                                                              Column(
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .end,
+                                                                children: [
+                                                                  Text(
+                                                                    '02/04/2023',
+                                                                    style: GoogleFonts
+                                                                        .poppins(
+                                                                      textStyle:
+                                                                          TextStyle(
+                                                                        color: Color(
+                                                                            0xFF080808),
+                                                                        fontSize:
+                                                                            14.sp,
+                                                                        fontWeight:
+                                                                            FontWeight.w300,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  SizedBox(
+                                                                    height: 10.h,
+                                                                  ),
+                                                                  Text(
+                                                                    '10 %',
+                                                                    style: GoogleFonts
+                                                                        .poppins(
+                                                                      textStyle:
+                                                                          TextStyle(
+                                                                        color: Color(
+                                                                            0xFF080808),
+                                                                        fontSize:
+                                                                            14.sp,
+                                                                        fontWeight:
+                                                                            FontWeight.w300,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  SizedBox(
+                                                                    height: 10.h,
+                                                                  ),
+                                                                  Text(
+                                                                    '\$5,000.00',
+                                                                    style: GoogleFonts
+                                                                        .poppins(
+                                                                      textStyle:
+                                                                          TextStyle(
+                                                                        color: Color(
+                                                                            0xFF080808),
+                                                                        fontSize:
+                                                                            14.sp,
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        fontWeight:
+                                                                            FontWeight.w300,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  SizedBox(
+                                                                    height: 10.h,
+                                                                  ),
+                                                                  Text(
+                                                                    '2',
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .right,
+                                                                    style:
+                                                                        TextStyle(
+                                                                      color: Color(
+                                                                          0xFF080808),
+                                                                      fontSize:
+                                                                          14.sp,
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w300,
+                                                                    ),
+                                                                  ),
+                                                                  SizedBox(
+                                                                    height: 10.h,
+                                                                  ),
+                                                                  Text(
+                                                                    'Emergency Bills',
+                                                                    style: GoogleFonts
+                                                                        .poppins(
+                                                                      textStyle:
+                                                                          TextStyle(
+                                                                        color: Color(
+                                                                            0xFF080808),
+                                                                        fontSize:
+                                                                            14.sp,
+                                                                        fontWeight:
+                                                                            FontWeight.w300,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  SizedBox(
+                                                                    height: 10.h,
+                                                                  ),
+                                                                  Text(
+                                                                    '  \$ 10,050.00',
+                                                                    style: GoogleFonts
+                                                                        .poppins(
+                                                                      textStyle:
+                                                                          TextStyle(
+                                                                        color: Color(
+                                                                            0xFF080808),
+                                                                        fontSize:
+                                                                            14.sp,
+                                                                        fontWeight:
+                                                                            FontWeight.w300,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                                                                             ],
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          '---------------------------------------------',
+                                                          style: GoogleFonts
+                                                              .poppins(
+                                                            textStyle:
+                                                            TextStyle(
+                                                              color: Color(
+                                                                  0xFF7F8790),
+                                                              fontSize:
+                                                              14.sp,
+                                                              fontWeight:
+                                                              FontWeight.w300,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(height: 10.h,),
+                                                        TextButton(onPressed:(){Navigator.of(context).push(MaterialPageRoute(builder: (_)=>Screen9()));},
+                                                          child: Container(
+                                                            width: 280.w,
+                                                            height: 50.h,
+                                                            decoration: ShapeDecoration(
+                                                              color: Color(0xFFFF0083),
+                                                              shape: RoundedRectangleBorder(
+                                                                  borderRadius: BorderRadius.circular(20.r)),
+                                                            ),
+                                                            child: Center(
+                                                              child: Text(
+                                                                'Accept',
+                                                                style: GoogleFonts.poppins(
+                                                                  textStyle: TextStyle(
+                                                                    color: Color(0xFFFFF2F2),
+                                                                    fontSize: 18.sp,
+                                                                    fontWeight: FontWeight.w600,
+                                                                    letterSpacing: 0.06,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(height: 10.h,),
+                                                        Container(
+                                                          width: 280.w,
+                                                          height: 50.h,
+                                                          decoration: ShapeDecoration(
+                                                            color: Colors.black,
+                                                            shape: RoundedRectangleBorder(
+                                                                borderRadius: BorderRadius.circular(20.r)),
+                                                          ),
+                                                          child: Center(
+                                                            child: Text(
+                                                              'Decline',
+                                                              style: GoogleFonts.poppins(
+                                                                textStyle: TextStyle(
+                                                                  color: Color(0xFFFFF2F2),
+                                                                  fontSize: 18.sp,
+                                                                  fontWeight: FontWeight.w600,
+                                                                  letterSpacing: 0.06,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  );
+                                                },
+                                              );
+                                            },
+                                            child: Text(
+                                              'Apply Now',
+                                              style: GoogleFonts.poppins(
+                                                textStyle: TextStyle(
+                                                  color: Color(0xFFFFF2F2),
+                                                  fontSize: 18.sp,
+                                                  fontWeight: FontWeight.w600,
+                                                  letterSpacing: 0.06,
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -503,17 +922,14 @@ class _Screen8State extends State<Screen8> {
                         child: CircleAvatar(
                           radius: 20.r,
                           backgroundColor: Color(0xffFF0083),
+                          child: Icon(
+                            Icons.arrow_forward,
+                            size: 33,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 302, top: 120),
-                  child: Icon(
-                    Icons.arrow_forward,
-                    size: 33,
-                    color: Colors.white,
                   ),
                 ),
               ],
