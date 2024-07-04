@@ -95,11 +95,12 @@ class _Screen8State extends State<Screen8> {
                   child: SizedBox(
                     width: 70.w,
                     child: ClipRRect(
-                        borderRadius:
-                            BorderRadius.only(topRight: Radius.circular(10)),
-                        child: Image.asset(
-                          "assets/f.png",
-                        )),
+                      borderRadius:
+                          BorderRadius.only(topRight: Radius.circular(10)),
+                      child: Image.asset(
+                        "assets/f.png",
+                      ),
+                    ),
                   ),
                 ),
                 Padding(
@@ -612,7 +613,8 @@ class _Screen8State extends State<Screen8> {
                                                                     ),
                                                                   ),
                                                                   SizedBox(
-                                                                    height: 10.h,
+                                                                    height:
+                                                                        10.h,
                                                                   ),
                                                                   Text(
                                                                     'Interest Rate:',
@@ -630,7 +632,8 @@ class _Screen8State extends State<Screen8> {
                                                                     ),
                                                                   ),
                                                                   SizedBox(
-                                                                    height: 10.h,
+                                                                    height:
+                                                                        10.h,
                                                                   ),
                                                                   Text(
                                                                     'Monthly Repayment:',
@@ -648,7 +651,8 @@ class _Screen8State extends State<Screen8> {
                                                                     ),
                                                                   ),
                                                                   SizedBox(
-                                                                    height: 10.h,
+                                                                    height:
+                                                                        10.h,
                                                                   ),
                                                                   Text(
                                                                     'No of Payments:',
@@ -666,7 +670,8 @@ class _Screen8State extends State<Screen8> {
                                                                     ),
                                                                   ),
                                                                   SizedBox(
-                                                                    height: 10.h,
+                                                                    height:
+                                                                        10.h,
                                                                   ),
                                                                   Text(
                                                                     'Reason',
@@ -684,7 +689,8 @@ class _Screen8State extends State<Screen8> {
                                                                     ),
                                                                   ),
                                                                   SizedBox(
-                                                                    height: 10.h,
+                                                                    height:
+                                                                        10.h,
                                                                   ),
                                                                   Text(
                                                                     'Total Payback Amount:',
@@ -702,7 +708,8 @@ class _Screen8State extends State<Screen8> {
                                                                     ),
                                                                   ),
                                                                   SizedBox(
-                                                                    height: 10.h,
+                                                                    height:
+                                                                        10.h,
                                                                   ),
                                                                 ],
                                                               ),
@@ -730,7 +737,8 @@ class _Screen8State extends State<Screen8> {
                                                                     ),
                                                                   ),
                                                                   SizedBox(
-                                                                    height: 10.h,
+                                                                    height:
+                                                                        10.h,
                                                                   ),
                                                                   Text(
                                                                     '10 %',
@@ -748,7 +756,8 @@ class _Screen8State extends State<Screen8> {
                                                                     ),
                                                                   ),
                                                                   SizedBox(
-                                                                    height: 10.h,
+                                                                    height:
+                                                                        10.h,
                                                                   ),
                                                                   Text(
                                                                     '\$5,000.00',
@@ -768,7 +777,8 @@ class _Screen8State extends State<Screen8> {
                                                                     ),
                                                                   ),
                                                                   SizedBox(
-                                                                    height: 10.h,
+                                                                    height:
+                                                                        10.h,
                                                                   ),
                                                                   Text(
                                                                     '2',
@@ -789,7 +799,8 @@ class _Screen8State extends State<Screen8> {
                                                                     ),
                                                                   ),
                                                                   SizedBox(
-                                                                    height: 10.h,
+                                                                    height:
+                                                                        10.h,
                                                                   ),
                                                                   Text(
                                                                     'Emergency Bills',
@@ -807,7 +818,8 @@ class _Screen8State extends State<Screen8> {
                                                                     ),
                                                                   ),
                                                                   SizedBox(
-                                                                    height: 10.h,
+                                                                    height:
+                                                                        10.h,
                                                                   ),
                                                                   Text(
                                                                     '  \$ 10,050.00',
@@ -826,7 +838,7 @@ class _Screen8State extends State<Screen8> {
                                                                   ),
                                                                 ],
                                                               ),
-                                                                                                             ],
+                                                            ],
                                                           ),
                                                         ),
                                                         Text(
@@ -834,59 +846,94 @@ class _Screen8State extends State<Screen8> {
                                                           style: GoogleFonts
                                                               .poppins(
                                                             textStyle:
-                                                            TextStyle(
+                                                                TextStyle(
                                                               color: Color(
                                                                   0xFF7F8790),
-                                                              fontSize:
-                                                              14.sp,
+                                                              fontSize: 14.sp,
                                                               fontWeight:
-                                                              FontWeight.w300,
+                                                                  FontWeight
+                                                                      .w300,
                                                             ),
                                                           ),
                                                         ),
-                                                        SizedBox(height: 10.h,),
-                                                        TextButton(onPressed:(){Navigator.of(context).push(MaterialPageRoute(builder: (_)=>Screen9()));},
+                                                        SizedBox(
+                                                          height: 10.h,
+                                                        ),
+                                                        TextButton(
+                                                          onPressed: () {
+                                                            Navigator.of(
+                                                                    context)
+                                                                .push(MaterialPageRoute(
+                                                                    builder: (_) =>
+                                                                        Screen9()));
+                                                          },
                                                           child: Container(
                                                             width: 280.w,
                                                             height: 50.h,
-                                                            decoration: ShapeDecoration(
-                                                              color: Color(0xFFFF0083),
+                                                            decoration:
+                                                                ShapeDecoration(
+                                                              color: Color(
+                                                                  0xFFFF0083),
                                                               shape: RoundedRectangleBorder(
-                                                                  borderRadius: BorderRadius.circular(20.r)),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              20.r)),
                                                             ),
                                                             child: Center(
                                                               child: Text(
                                                                 'Accept',
-                                                                style: GoogleFonts.poppins(
-                                                                  textStyle: TextStyle(
-                                                                    color: Color(0xFFFFF2F2),
-                                                                    fontSize: 18.sp,
-                                                                    fontWeight: FontWeight.w600,
-                                                                    letterSpacing: 0.06,
+                                                                style:
+                                                                    GoogleFonts
+                                                                        .poppins(
+                                                                  textStyle:
+                                                                      TextStyle(
+                                                                    color: Color(
+                                                                        0xFFFFF2F2),
+                                                                    fontSize:
+                                                                        18.sp,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    letterSpacing:
+                                                                        0.06,
                                                                   ),
                                                                 ),
                                                               ),
                                                             ),
                                                           ),
                                                         ),
-                                                        SizedBox(height: 10.h,),
+                                                        SizedBox(
+                                                          height: 10.h,
+                                                        ),
                                                         Container(
                                                           width: 280.w,
                                                           height: 50.h,
-                                                          decoration: ShapeDecoration(
+                                                          decoration:
+                                                              ShapeDecoration(
                                                             color: Colors.black,
                                                             shape: RoundedRectangleBorder(
-                                                                borderRadius: BorderRadius.circular(20.r)),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            20.r)),
                                                           ),
                                                           child: Center(
                                                             child: Text(
                                                               'Decline',
-                                                              style: GoogleFonts.poppins(
-                                                                textStyle: TextStyle(
-                                                                  color: Color(0xFFFFF2F2),
-                                                                  fontSize: 18.sp,
-                                                                  fontWeight: FontWeight.w600,
-                                                                  letterSpacing: 0.06,
+                                                              style: GoogleFonts
+                                                                  .poppins(
+                                                                textStyle:
+                                                                    TextStyle(
+                                                                  color: Color(
+                                                                      0xFFFFF2F2),
+                                                                  fontSize:
+                                                                      18.sp,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  letterSpacing:
+                                                                      0.06,
                                                                 ),
                                                               ),
                                                             ),
