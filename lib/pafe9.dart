@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -211,37 +213,101 @@ class _Screen9State extends State<Screen9> {
                         TextButton(
                           onPressed: () {
                             showModalBottomSheet(
-                              isScrollControlled: true,
                               context: context,
+                              isScrollControlled: true,
                               builder: (BuildContext Context) {
                                 return SizedBox(
-                                  height: 500.h,
                                   width: 600.w,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(left: 50),
-                                    child: Row(
+                                  height: 400.h,
+                                  child: DefaultTabController(
+                                    length: 2,
+                                    child: Column(
                                       children: [
-                                        Text(
-                                          'Transactions',
-                                          style: GoogleFonts.poppins(
-                                            textStyle: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 16.sp,
-                                              fontWeight: FontWeight.w700,
-                                            ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(),
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                'Repay Loan',
+                                                style: GoogleFonts.poppins(
+                                                  textStyle: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 20.sp,
+                                                    fontWeight: FontWeight.w700,
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(width: 200.w),
+                                              Icon(
+                                                Icons.close,
+                                                size: 25,
+                                              )
+                                            ],
                                           ),
                                         ),
-                                        SizedBox(width: 130.w,),
-                                        Text(
-                                          'See All',
-                                          style: GoogleFonts.poppins(
-                                            textStyle: TextStyle(
-                                              color: Colors.red,
-                                              fontSize: 14.sp,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
+                                        Container(
+                                          width: 300.w,
+                                          height: 50.h,
+                                          decoration: ShapeDecoration(
+                                              color: Colors.redAccent,
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          30))),
+                                          child: TabBar(
+                                              unselectedLabelColor: Colors.blue,
+                                              indicatorSize:
+                                                  TabBarIndicatorSize.tab,
+                                              dividerHeight: 0,
+                                              indicator: BoxDecoration(
+                                                color: Color(0xffDD323F),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
+                                              labelColor: Colors.white,
+                                              dividerColor: Colors.yellow,
+                                              tabs: [
+                                                Tab(
+                                                  child: Text("Full Repayment"),
+                                                ),
+                                                Tab(
+                                                  child:
+                                                      Text("Partial Repayment"),
+                                                )
+                                              ]),
                                         ),
+                                        SizedBox(
+                                          height: 200.h,
+                                          child: TabBarView(
+                                            children: [
+                                              Container(
+                                                height: 600.h,
+                                                color: Colors.cyan,
+                                                child: Text(
+                                                  'Repay your loan today and take another one immediately.',
+                                                  textAlign:
+                                                      TextAlign.center,
+                                                  style:
+                                                      GoogleFonts.poppins(
+                                                    textStyle: TextStyle(
+                                                      color:
+                                                          Color(0xFF959595),
+                                                      fontSize: 12.sp,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      letterSpacing: 0.40,
+                                                    ),
+                                                  ),
+                                                ),
+
+                                              ),
+
+                                              Container(
+                                                color: Colors.yellowAccent,
+                                              )
+                                            ],
+                                          ),
+                                        )
                                       ],
                                     ),
                                   ),
@@ -250,11 +316,11 @@ class _Screen9State extends State<Screen9> {
                             );
                           },
                           child: CircleAvatar(
-                            radius: 15.r,
+                            radius: 20.r,
                             backgroundColor: Color(0xffFF0083),
                             child: Icon(
                               Icons.arrow_forward,
-                              size: 33,
+                              size: 30,
                               color: Colors.white,
                             ),
                           ),
@@ -263,6 +329,228 @@ class _Screen9State extends State<Screen9> {
                     ),
                   ),
                 ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 50),
+              child: Container(
+                height: 350.h,
+                width: 500.w,
+                decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(20.r),
+                            topLeft: Radius.circular(20.r)))),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 30, left: 20),
+                  child: Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Transactions',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                color: Colors.black,
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 20.h,
+                          ),
+                          Text('Mini-Statement',
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                  color: Color(0xFF707070),
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              )),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          Text('LoanDisbursement',
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              )),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Text('2022-9-12',
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                  color: Color(0xFF707070),
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              )),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          Text(
+                            'Withdraw to bank',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                color: Colors.black,
+                                fontSize: 15.sp,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Text(
+                            '2022-9-12',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                color: Color(0xFF707070),
+                                fontSize: 15.sp,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          Text(
+                            'Loan Repayment',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                color: Colors.black,
+                                fontSize: 15.sp,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Text(
+                            '2022-9-12',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                color: Color(0xFF707070),
+                                fontSize: 15.sp,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          Text(
+                            'Loan Repayment Fees',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                color: Colors.black,
+                                fontSize: 15.sp,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Text(
+                            '2022-9-12',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                color: Color(0xFF707070),
+                                fontSize: 15.sp,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: 50.w,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 5),
+                            child: Text(
+                              'See All',
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                  color: Colors.red,
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 60.h,
+                          ),
+                          Text(
+                            '\$10,050.00',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                color: Color(0xFF53D258),
+                                fontSize: 16.sp,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 40.h,
+                          ),
+                          Text(
+                            '-\$10,050.00',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                color: Color(0xFFE25C5C),
+                                fontSize: 16.sp,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 30.h,
+                          ),
+                          Text(
+                            '\$3,000.00',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                color: Color(0xFF53D258),
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 40.h,
+                          ),
+                          Text(
+                            '-\$32.00',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                color: Color(0xFFE25C5C),
+                                fontSize: 16.sp,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ],
