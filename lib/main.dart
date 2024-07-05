@@ -1,5 +1,6 @@
 import 'package:bankloan/eight.dart';
 import 'package:bankloan/first.dart';
+import 'package:bankloan/pafe9.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
                 colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
                 useMaterial3: true,
               ),
-              home: Screen8()
+              home: Home()
           );
         });
   }

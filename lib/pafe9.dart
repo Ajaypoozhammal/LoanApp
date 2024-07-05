@@ -13,6 +13,8 @@ class Screen9 extends StatefulWidget {
 }
 
 class _Screen9State extends State<Screen9> {
+  TextEditingController controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -221,94 +223,610 @@ class _Screen9State extends State<Screen9> {
                                   height: 400.h,
                                   child: DefaultTabController(
                                     length: 2,
-                                    child: Column(
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(),
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Repay Loan',
-                                                style: GoogleFonts.poppins(
-                                                  textStyle: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 20.sp,
-                                                    fontWeight: FontWeight.w700,
-                                                  ),
-                                                ),
-                                              ),
-                                              SizedBox(width: 200.w),
-                                              Icon(
-                                                Icons.close,
-                                                size: 25,
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                        Container(
-                                          width: 300.w,
-                                          height: 50.h,
-                                          decoration: ShapeDecoration(
-                                              color: Colors.redAccent,
-                                              shape: RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          30))),
-                                          child: TabBar(
-                                              unselectedLabelColor: Colors.blue,
-                                              indicatorSize:
-                                                  TabBarIndicatorSize.tab,
-                                              dividerHeight: 0,
-                                              indicator: BoxDecoration(
-                                                color: Color(0xffDD323F),
-                                                borderRadius:
-                                                    BorderRadius.circular(20),
-                                              ),
-                                              labelColor: Colors.white,
-                                              dividerColor: Colors.yellow,
-                                              tabs: [
-                                                Tab(
-                                                  child: Text("Full Repayment"),
-                                                ),
-                                                Tab(
-                                                  child:
-                                                      Text("Partial Repayment"),
-                                                )
-                                              ]),
-                                        ),
-                                        SizedBox(
-                                          height: 200.h,
-                                          child: TabBarView(
-                                            children: [
-                                              Container(
-                                                height: 600.h,
-                                                color: Colors.cyan,
-                                                child: Text(
-                                                  'Repay your loan today and take another one immediately.',
-                                                  textAlign:
-                                                      TextAlign.center,
-                                                  style:
-                                                      GoogleFonts.poppins(
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 30, left: 10),
+                                      child: Column(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  'Repay Loan',
+                                                  style: GoogleFonts.poppins(
                                                     textStyle: TextStyle(
-                                                      color:
-                                                          Color(0xFF959595),
-                                                      fontSize: 12.sp,
+                                                      color: Colors.black,
+                                                      fontSize: 20.sp,
                                                       fontWeight:
-                                                          FontWeight.w400,
-                                                      letterSpacing: 0.40,
+                                                          FontWeight.w700,
                                                     ),
                                                   ),
                                                 ),
-
-                                              ),
-
-                                              Container(
-                                                color: Colors.yellowAccent,
-                                              )
-                                            ],
+                                                SizedBox(width: 160.w),
+                                                TextButton(
+                                                  onPressed: () {
+                                                    Navigator.of(context).pop();
+                                                  },
+                                                  child: Icon(
+                                                    Icons.close,
+                                                    size: 25,
+                                                  ),
+                                                )
+                                              ],
+                                            ),
                                           ),
-                                        )
-                                      ],
+                                          SizedBox(
+                                            height: 10.h,
+                                          ),
+                                          Container(
+                                            width: 300.w,
+                                            height: 50.h,
+                                            decoration: ShapeDecoration(
+                                                color: Colors.redAccent,
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30))),
+                                            child: TabBar(
+                                                unselectedLabelColor:
+                                                    Colors.black,
+                                                indicatorSize:
+                                                    TabBarIndicatorSize.tab,
+                                                dividerHeight: 0,
+                                                indicator: BoxDecoration(
+                                                  color: Color(0xffDD323F),
+                                                  borderRadius:
+                                                      BorderRadius.circular(20),
+                                                ),
+                                                labelColor: Colors.white,
+                                                dividerColor: Colors.yellow,
+                                                tabs: [
+                                                  Tab(
+                                                    child:
+                                                        Text("Full Repayment"),
+                                                  ),
+                                                  Tab(
+                                                    child: Text(
+                                                        "Partial Repayment"),
+                                                  )
+                                                ]),
+                                          ),
+                                          SizedBox(
+                                            height: 40.h,
+                                          ),
+                                          SizedBox(
+                                            height: 200.h,
+                                            child: TabBarView(
+                                              children: [
+                                                Container(
+                                                  height: 600.h,
+                                                  color: Colors.white10,
+                                                  child: Column(
+                                                    children: [
+                                                      Text(
+                                                        'Repay your loan today and take another one immediately.',
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style:
+                                                            GoogleFonts.poppins(
+                                                          textStyle: TextStyle(
+                                                            color: Color(
+                                                                0xFF959595),
+                                                            fontSize: 12.sp,
+                                                            fontWeight:
+                                                                FontWeight.w400,
+                                                            letterSpacing: 0.40,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                                right: 180,
+                                                                top: 30),
+                                                        child: Text(
+                                                          'You currently owe',
+                                                          style: GoogleFonts
+                                                              .poppins(
+                                                            textStyle:
+                                                                TextStyle(
+                                                              color:
+                                                                  Colors.black,
+                                                              fontSize: 12.sp,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                                right: 180,
+                                                                top: 7),
+                                                        child: Text(
+                                                          '\$10,050.00',
+                                                          style: GoogleFonts
+                                                              .poppins(
+                                                            textStyle:
+                                                                TextStyle(
+                                                              color:
+                                                                  Colors.black,
+                                                              fontSize: 24.sp,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      SizedBox(
+                                                        height: 20.h,
+                                                      ),
+                                                      Container(
+                                                        width: 250.w,
+                                                        height: 46.h,
+                                                        decoration:
+                                                            ShapeDecoration(
+                                                          color:
+                                                              Color(0xFFFF0083),
+                                                          shape: RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          20.r)),
+                                                        ),
+                                                        child: Center(
+                                                          child: TextButton(
+                                                            onPressed: () {
+                                                              showModalBottomSheet(
+                                                                isScrollControlled:
+                                                                    true,
+                                                                context:
+                                                                    context,
+                                                                builder:
+                                                                    (BuildContext) {
+                                                                  return SizedBox(
+                                                                    width:
+                                                                        400.w,
+                                                                    height:
+                                                                        500.h,
+                                                                    child:
+                                                                        Column(
+                                                                      children: [
+                                                                        Padding(
+                                                                          padding: const EdgeInsets
+                                                                              .only(
+                                                                              top: 45),
+                                                                          child:
+                                                                              Text(
+                                                                            'That was way to easy!',
+                                                                            style:
+                                                                                GoogleFonts.poppins(
+                                                                              textStyle: TextStyle(
+                                                                                color: Colors.black,
+                                                                                fontSize: 17.sp,
+                                                                                fontWeight: FontWeight.w600,
+                                                                                letterSpacing: 0.04,
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                        SizedBox(
+                                                                          height:
+                                                                              10.h,
+                                                                        ),
+                                                                        Text(
+                                                                          'Congratulations!',
+                                                                          style:
+                                                                              GoogleFonts.poppins(
+                                                                            textStyle:
+                                                                                TextStyle(
+                                                                              color: Color(0xFF1F1F1F),
+                                                                              fontSize: 24.sp,
+                                                                              fontWeight: FontWeight.w700,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                        SizedBox(
+                                                                          height:
+                                                                              15.h,
+                                                                        ),
+                                                                        CircleAvatar(
+                                                                          backgroundColor:
+                                                                              Color(0xFFC5C5C5),
+                                                                          radius:
+                                                                              40.r,
+                                                                          child:
+                                                                              Icon(
+                                                                            Icons.done,
+                                                                            color:
+                                                                                CupertinoColors.activeGreen,
+                                                                            size:
+                                                                                80,
+                                                                          ),
+                                                                        ),
+                                                                        SizedBox(
+                                                                          height:
+                                                                              15.h,
+                                                                        ),
+                                                                        Text(
+                                                                          'Transaction Summary',
+                                                                          style:
+                                                                              GoogleFonts.poppins(
+                                                                            textStyle:
+                                                                                TextStyle(
+                                                                              color: Colors.black,
+                                                                              fontSize: 17.sp,
+                                                                              fontWeight: FontWeight.w600,
+                                                                              letterSpacing: 0.04,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                        SizedBox(
+                                                                          height:
+                                                                              15.h,
+                                                                        ),
+                                                                        Text(
+                                                                          '\$10,050.00',
+                                                                          style:
+                                                                              GoogleFonts.poppins(
+                                                                            textStyle:
+                                                                                TextStyle(
+                                                                              color: Colors.black,
+                                                                              fontSize: 24.sp,
+                                                                              fontWeight: FontWeight.w600,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                        SizedBox(
+                                                                          height:
+                                                                              16.h,
+                                                                        ),
+                                                                        Text(
+                                                                          'Your Loan has been fully\nPaid',
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style:
+                                                                              GoogleFonts.poppins(
+                                                                            textStyle:
+                                                                                TextStyle(
+                                                                              color: Color(0xFF1F1F1F),
+                                                                              fontSize: 16.sp,
+                                                                              fontWeight: FontWeight.w700,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                        SizedBox(
+                                                                            height:
+                                                                                30.h),
+                                                                        Container(
+                                                                          width:
+                                                                              250.w,
+                                                                          height:
+                                                                              46.h,
+                                                                          decoration:
+                                                                              ShapeDecoration(
+                                                                            color:
+                                                                                Color(0xFFFF0083),
+                                                                            shape:
+                                                                                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
+                                                                          ),
+                                                                          child:
+                                                                              Center(
+                                                                            child:
+                                                                                TextButton(
+                                                                              onPressed: () {
+                                                                                Navigator.of(context).push((MaterialPageRoute(builder: (_) => Screen9())));
+                                                                              },
+                                                                              child: Text(
+                                                                                'Okey',
+                                                                                style: GoogleFonts.poppins(
+                                                                                  textStyle: TextStyle(
+                                                                                    color: Color(0xFFFFF2F2),
+                                                                                    fontSize: 18.sp,
+                                                                                    fontWeight: FontWeight.w600,
+                                                                                    letterSpacing: 0.06,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  );
+                                                                },
+                                                              );
+                                                            },
+                                                            child: Text(
+                                                              'Continue',
+                                                              style: GoogleFonts
+                                                                  .poppins(
+                                                                textStyle:
+                                                                    TextStyle(
+                                                                  color: Color(
+                                                                      0xFFFFF2F2),
+                                                                  fontSize:
+                                                                      18.sp,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  letterSpacing:
+                                                                      0.06,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Column(
+                                                  children: [
+                                                    Container(
+                                                      color:
+                                                          Colors.white10,
+                                                      height: 200.h,
+                                                      child: Column(
+                                                        children: [
+                                                          Text(
+                                                            'Repay your loan today and take another one immediately.',
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: GoogleFonts
+                                                                .poppins(
+                                                              textStyle:
+                                                                  TextStyle(
+                                                                color: Color(
+                                                                    0xFF959595),
+                                                                fontSize: 12.sp,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w400,
+                                                                letterSpacing:
+                                                                    0.40,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                    .only(
+                                                                    top: 30,
+                                                                    left: 20,
+                                                                    right: 20),
+                                                            child: TextField(
+                                                              controller:
+                                                                  controller,
+                                                              decoration: InputDecoration(
+                                                                  border: OutlineInputBorder(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(20
+                                                                              .r)),
+                                                                  labelText:
+                                                                      "Enter amount",
+                                                                  hintText:
+                                                                      '\$'),
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 20.h,
+                                                          ),
+                                                          Container(
+                                                            width: 250.w,
+                                                            height: 46.h,
+                                                            decoration:
+                                                                ShapeDecoration(
+                                                              color: Color(
+                                                                  0xFFFF0083),
+                                                              shape: RoundedRectangleBorder(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              20.r)),
+                                                            ),
+                                                            child: Center(
+                                                              child: TextButton(
+                                                                onPressed: () {
+                                                                  showModalBottomSheet(
+                                                                      isScrollControlled:
+                                                                          true,
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (BuildContext) {
+                                                                        return SizedBox(
+                                                                          width:
+                                                                              400.w,
+                                                                          height:
+                                                                              500.h,
+                                                                          child:
+                                                                          Column(
+                                                                            children: [
+                                                                              Padding(
+                                                                                padding: const EdgeInsets
+                                                                                    .only(
+                                                                                    top: 45),
+                                                                                child:
+                                                                                Text(
+                                                                                  'That was way to easy!',
+                                                                                  style:
+                                                                                  GoogleFonts.poppins(
+                                                                                    textStyle: TextStyle(
+                                                                                      color: Colors.black,
+                                                                                      fontSize: 17.sp,
+                                                                                      fontWeight: FontWeight.w600,
+                                                                                      letterSpacing: 0.04,
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                height:
+                                                                                10.h,
+                                                                              ),
+                                                                              Text(
+                                                                                'Congratulations!',
+                                                                                style:
+                                                                                GoogleFonts.poppins(
+                                                                                  textStyle:
+                                                                                  TextStyle(
+                                                                                    color: Color(0xFF1F1F1F),
+                                                                                    fontSize: 24.sp,
+                                                                                    fontWeight: FontWeight.w700,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                height:
+                                                                                15.h,
+                                                                              ),
+                                                                              CircleAvatar(
+                                                                                backgroundColor:
+                                                                                Color(0xFFC5C5C5),
+                                                                                radius:
+                                                                                40.r,
+                                                                                child:
+                                                                                Icon(
+                                                                                  Icons.done,
+                                                                                  color:
+                                                                                  CupertinoColors.activeGreen,
+                                                                                  size:
+                                                                                  80,
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                height:
+                                                                                15.h,
+                                                                              ),
+                                                                              Text(
+                                                                                'Transaction Summary',
+                                                                                style:
+                                                                                GoogleFonts.poppins(
+                                                                                  textStyle:
+                                                                                  TextStyle(
+                                                                                    color: Colors.black,
+                                                                                    fontSize: 17.sp,
+                                                                                    fontWeight: FontWeight.w600,
+                                                                                    letterSpacing: 0.04,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                height:
+                                                                                15.h,
+                                                                              ),
+                                                                              Text(
+                                                                                '\$10,050.00',
+                                                                                style:
+                                                                                GoogleFonts.poppins(
+                                                                                  textStyle:
+                                                                                  TextStyle(
+                                                                                    color: Colors.black,
+                                                                                    fontSize: 24.sp,
+                                                                                    fontWeight: FontWeight.w600,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                height:
+                                                                                16.h,
+                                                                              ),
+                                                                              Text(
+                                                                                'Your Loan has been fully\nPaid',
+                                                                                textAlign:
+                                                                                TextAlign.center,
+                                                                                style:
+                                                                                GoogleFonts.poppins(
+                                                                                  textStyle:
+                                                                                  TextStyle(
+                                                                                    color: Color(0xFF1F1F1F),
+                                                                                    fontSize: 16.sp,
+                                                                                    fontWeight: FontWeight.w700,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                  height:
+                                                                                  30.h),
+                                                                              Container(
+                                                                                width:
+                                                                                250.w,
+                                                                                height:
+                                                                                46.h,
+                                                                                decoration:
+                                                                                ShapeDecoration(
+                                                                                  color:
+                                                                                  Color(0xFFFF0083),
+                                                                                  shape:
+                                                                                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
+                                                                                ),
+                                                                                child:
+                                                                                Center(
+                                                                                  child:
+                                                                                  TextButton(
+                                                                                    onPressed: () {
+                                                                                      Navigator.of(context).push((MaterialPageRoute(builder: (_) => Screen9())));
+                                                                                    },
+                                                                                    child: Text(
+                                                                                      'Okey',
+                                                                                      style: GoogleFonts.poppins(
+                                                                                        textStyle: TextStyle(
+                                                                                          color: Color(0xFFFFF2F2),
+                                                                                          fontSize: 18.sp,
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                          letterSpacing: 0.06,
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+
+
+                                                                        );
+                                                                      },
+                                                                  );
+                                                                },
+                                                                child: Text(
+                                                                  'Continue',
+                                                                  style: GoogleFonts
+                                                                      .poppins(
+                                                                    textStyle:
+                                                                        TextStyle(
+                                                                      color: Color(
+                                                                          0xFFFFF2F2),
+                                                                      fontSize:
+                                                                          18.sp,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w600,
+                                                                      letterSpacing:
+                                                                          0.06,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                )
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 );
